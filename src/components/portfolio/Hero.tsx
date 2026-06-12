@@ -1,19 +1,39 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
-import Lottie from "lottie-react";
 import { AmbientThree } from "./AmbientThree";
 import { MagneticButton } from "./MagneticButton";
 import { scrollToId } from "./SmoothScroll";
 
+type LottieProps = {
+  animationData: unknown;
+  loop?: boolean;
+  style?: React.CSSProperties;
+};
+
 export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [animationData, setAnimationData] = useState(null);
+  const [LottieComp, setLottieComp] = useState<ComponentType<LottieProps> | null>(null);
 
   useEffect(() => {
     fetch("https://assets10.lottiefiles.com/packages/lf20_w51pcehl.json")
       .then((res) => res.json())
       .then((data) => setAnimationData(data));
+  }, []);
+
+  useEffect(() => {
+    let mounted = true;
+    import("lottie-react").then((mod) => {
+      // Handle CJS/ESM interop: the component may be at mod.default or mod.default.default
+      const candidate = (mod.default as any)?.default ?? mod.default ?? (mod as any);
+      if (mounted && typeof candidate === "function") {
+        setLottieComp(() => candidate as ComponentType<LottieProps>);
+      }
+    });
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -105,9 +125,9 @@ export function Hero() {
           <div className="absolute inset-0">
             <AmbientThree />
           </div>
-          {animationData ? (
+          {animationData && LottieComp ? (
             <div className="absolute inset-0 pointer-events-none">
-              <Lottie
+              <LottieComp
                 animationData={animationData}
                 loop={true}
                 style={{ width: "100%", height: "100%", background: "transparent" }}
