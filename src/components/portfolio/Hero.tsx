@@ -105,11 +105,19 @@ export function Hero() {
           <div className="absolute inset-0">
             <AmbientThree />
           </div>
-          <Suspense fallback={<div className="absolute inset-0 grid place-items-center font-mono text-xs uppercase tracking-widest text-white/40">Loading scene…</div>}>
+          {animationData ? (
             <div className="absolute inset-0 pointer-events-none">
-              <Spline scene={SPLINE_SCENE} style={{ width: "100%", height: "100%", background: "transparent" }} />
+              <Lottie
+                animationData={animationData}
+                loop={true}
+                style={{ width: "100%", height: "100%", background: "transparent" }}
+              />
             </div>
-          </Suspense>
+          ) : (
+            <div className="absolute inset-0 grid place-items-center font-mono text-xs uppercase tracking-widest text-white/40">
+              Loading animation…
+            </div>
+          )}
           <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/5" />
         </div>
       </div>
