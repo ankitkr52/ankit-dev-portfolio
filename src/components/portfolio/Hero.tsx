@@ -1,15 +1,20 @@
-import { Suspense, lazy, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
+import Lottie from "lottie-react";
 import { AmbientThree } from "./AmbientThree";
 import { MagneticButton } from "./MagneticButton";
 import { scrollToId } from "./SmoothScroll";
 
-const Spline = lazy(() => import("@splinetool/react-spline"));
-const SPLINE_SCENE = "https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode";
-
 export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://assets10.lottiefiles.com/packages/lf20_w51pcehl.json")
+      .then((res) => res.json())
+      .then((data) => setAnimationData(data));
+  }, []);
 
   useEffect(() => {
     if (!titleRef.current) return;
