@@ -114,6 +114,13 @@ export function Hero() {
             <MagneticButton variant="ghost" onClick={() => scrollToId("contact")}>
               Contact Me
             </MagneticButton>
+            <a
+              href="/Ankit-Kumar-Resume.pdf"
+              download="Ankit-Kumar-Resume.pdf"
+              className="inline-flex items-center gap-2 rounded-full border border-ember px-6 py-3 font-mono text-[12px] uppercase tracking-[0.18em] text-ember transition hover:bg-ember hover:text-carbon"
+            >
+              Download Resume ↓
+            </a>
             <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-white/70">
               <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-green-500" />
               Available for Hire
