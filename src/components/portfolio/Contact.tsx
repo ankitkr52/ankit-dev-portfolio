@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = "YOUR_SERVICE_ID";
+const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 const TYPES = ["Full-Stack App", "Backend API", "AI Integration", "Freelance Website", "Something Else"];
 
@@ -47,11 +52,29 @@ export function Contact() {
 
   const update = (k: keyof typeof f) => (v: string) => setF((p) => ({ ...p, [k]: v }));
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setState("loading");
-    // Replace setTimeout with Resend / EmailJS integration.
-    setTimeout(() => setState("sent"), 1400);
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: f.name,
+          from_email: f.email,
+          company: f.company || "Not provided",
+          budget: f.budget || "Not provided",
+          project_type: types.join(", ") || "Not specified",
+          message: f.message,
+        },
+        PUBLIC_KEY,
+      );
+      setState("sent");
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setState("idle");
+      alert("Something went wrong. Please email directly: ankit72p@gmail.com");
+    }
   };
 
   return (
