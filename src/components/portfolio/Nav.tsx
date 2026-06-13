@@ -71,12 +71,21 @@ export function Nav() {
             ))}
           </ul>
 
-          <button
-            onClick={() => scrollToId("contact")}
-            className="ember-sweep hidden rounded-full bg-bone px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-carbon transition hover:bg-ember hover:text-bone md:inline-block"
-          >
-            Hire Me →
-          </button>
+          <div className="hidden items-center gap-4 md:flex">
+            <a
+              href="/Ankit-Kumar-Resume.pdf"
+              download="Ankit-Kumar-Resume.pdf"
+              className="font-mono text-[11px] uppercase tracking-[0.18em] text-ember transition hover:underline"
+            >
+              Resume ↓
+            </a>
+            <button
+              onClick={() => scrollToId("contact")}
+              className="ember-sweep rounded-full bg-bone px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-carbon transition hover:bg-ember hover:text-bone"
+            >
+              Hire Me →
+            </button>
+          </div>
 
           <button
             className="md:hidden"
