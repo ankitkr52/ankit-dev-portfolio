@@ -162,7 +162,7 @@ export function Contact() {
                 href="tel:+918292640752"
                 className="mt-2 block font-display text-xl text-white/70 transition hover:text-ember"
               >
-                +91 82926 40752
+                +91 8292640752
               </a>
             </div>
 
@@ -198,11 +198,9 @@ export function Contact() {
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-ember">Status</div>
               <dl className="mt-4 space-y-2.5 font-mono text-[11px] uppercase tracking-[0.15em]">
                 {[
-                  ["Currently", "Open to Full-Time Roles"],
-                  ["Available", "Freelance Projects"],
-                  ["Education", "Mahakaushal Univ. · CS 2025"],
-                  ["Location", "India · Remote / Hybrid / On-site"],
-                  ["Response", "Within 24 hours"],
+                  ["Roles", "Open to Full-Time SDE / Full-Stack Roles"],
+                  ["Available", "Available for Freelance"],
+                  ["Location", "Remote / Hybrid / On-site across India"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex items-center justify-between gap-4">
                     <dt className="text-white/45">{k}</dt>

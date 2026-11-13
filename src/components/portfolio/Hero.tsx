@@ -68,7 +68,7 @@ export function Hero() {
 
       <div className="absolute inset-x-0 top-24 z-10 flex justify-center px-6">
         <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-white/40">
-          Ankit Kumar · Portfolio &nbsp;|&nbsp; 2024–2025 Index &nbsp;|&nbsp; Designed · Built · Shipped
+          Ankit Kumar · Portfolio &nbsp;|&nbsp; 2026 Index &nbsp;|&nbsp; Designed · Built · Shipped
         </div>
       </div>
 
@@ -81,7 +81,7 @@ export function Hero() {
             className="mb-6 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-white/60"
           >
             <span className="h-px w-8 bg-ember" />
-            Full-Stack Developer &amp; MERN Stack Engineer
+            Full-Stack MERN Developer — Building Scalable Web Products
           </motion.div>
 
           <h1
@@ -99,9 +99,10 @@ export function Hero() {
             transition={{ delay: 1.4, duration: 0.7 }}
             className="mt-8 max-w-xl text-base leading-relaxed text-white/65"
           >
-            Computer Science graduate from Mahakaushal University, Jabalpur. I design and ship production-grade web
-            applications — from clean user interfaces to scalable backend systems — with a focus on AI integrations,
-            authentication, and real-world impact.
+            Computer Science &amp; Engineering graduate (2026) from Sarvepalli Radhakrishnan University (RKDF Institute of
+            Science &amp; Technology), Bhopal. I design and ship production-grade web applications — clean React/Next.js
+            interfaces backed by secure Node.js + MongoDB systems, with a focus on AI integrations, authentication, and
+            payments.
           </motion.p>
 
           <motion.div
@@ -152,8 +153,8 @@ export function Hero() {
       <div className="absolute inset-x-0 bottom-6 z-10 px-6">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-white/60">
           <span><span className="text-ember">05</span> Live Projects</span>
-          <span className="hidden sm:inline"><span className="text-ember">06</span> Core Technologies</span>
-          <span><span className="text-ember">03</span> Clients Served</span>
+          <span className="hidden sm:inline"><span className="text-ember">08</span> Tech Categories</span>
+          <span><span className="text-ember">03</span> Months Internship</span>
           <span className="hidden md:inline">Scroll ↓</span>
         </div>
       </div>

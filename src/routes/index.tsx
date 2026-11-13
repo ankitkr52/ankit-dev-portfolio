@@ -14,20 +14,20 @@ import { ScrollProgress } from "@/components/portfolio/ScrollProgress";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ankit Kumar — Full-Stack Developer & MERN Stack Engineer" },
+      { title: "Ankit Kumar — Full-Stack MERN Developer" },
       {
         name: "description",
         content:
-          "Computer Science graduate from Mahakaushal University. Building production-grade web apps with React, Node.js, MongoDB, and Google Gemini AI. Open to full-time roles and freelance projects.",
+          "Computer Science & Engineering graduate from Sarvepalli Radhakrishnan University, Bhopal. Building production-grade MERN applications with secure APIs, AI integrations, and payment systems.",
       },
       { name: "keywords", content: "Full Stack Developer, MERN Stack, React Developer, Node.js, MongoDB, AI Integration, Gemini API, Freelance Developer India, Next.js Developer" },
-      { property: "og:title", content: "Ankit Kumar — Full-Stack Developer" },
-      { property: "og:description", content: "Shipping production-grade web applications." },
+      { property: "og:title", content: "Ankit Kumar — Full-Stack MERN Developer" },
+      { property: "og:description", content: "Building scalable web products with React, Node.js, and MongoDB." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Ankit Kumar — Full-Stack Developer" },
-      { name: "twitter:description", content: "Shipping production-grade web applications." },
+      { name: "twitter:title", content: "Ankit Kumar — Full-Stack MERN Developer" },
+      { name: "twitter:description", content: "Building scalable web products with React, Node.js, and MongoDB." },
     ],
     links: [
       { rel: "canonical", href: "/" },
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
           jobTitle: "Full-Stack Developer",
           alumniOf: {
             "@type": "CollegeOrUniversity",
-            name: "Mahakaushal University, Jabalpur",
+            name: "Sarvepalli Radhakrishnan University (RKDF Institute of Science & Technology), Bhopal",
           },
           knowsAbout: ["React", "Node.js", "MongoDB", "Express.js", "Gemini AI", "REST APIs", "JWT Authentication"],
           sameAs: [

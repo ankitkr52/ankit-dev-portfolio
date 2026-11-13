@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const MARQUEE = "Open to Full-Time Roles  ·  Available for Freelance  ·  MERN Stack Engineer  ·  Let's Ship Something Great  ·  ";
+const MARQUEE = "Open to Full-Time SDE / Full-Stack Roles  ·  Available for Freelance  ·  Remote / Hybrid / On-site across India  ·  ";
 
 export function Footer() {
   const ref = useRef<HTMLDivElement>(null);
@@ -44,7 +44,7 @@ export function Footer() {
       <div className="mx-auto h-px max-w-7xl bg-gradient-to-r from-transparent via-ember/60 to-transparent" />
 
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 font-mono text-[11px] uppercase tracking-[0.18em] text-white/50 md:flex-row">
-        <span>© 2025 Ankit Kumar · All rights reserved</span>
+        <span>© 2026 Ankit Kumar · All rights reserved</span>
         <span className="flex items-center gap-4">
           Built with React · Deployed on Vercel
           <span className="flex items-center gap-1.5">

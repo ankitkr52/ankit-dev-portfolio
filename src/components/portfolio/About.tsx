@@ -2,29 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const STACK = [
-  { label: "Languages", items: ["JavaScript (ES6+)", "Python", "HTML5", "CSS3"] },
-  { label: "Frontend", items: ["React.js", "Next.js", "Tailwind CSS", "Framer Motion", "GSAP", "Lenis"] },
-  { label: "Backend & DB", items: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Zod", "Bcrypt", "Stripe", "REST APIs"] },
-  { label: "Tools & AI", items: ["Git", "GitHub", "Postman", "Vercel", "Netlify", "Clerk", "Gemini API", "Multer", "pdf-parse"] },
+  { label: "Languages", items: ["JavaScript (ES6+)", "TypeScript", "Python"] },
+  { label: "Frontend", items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "GSAP", "Lenis"] },
+  { label: "Backend", items: ["Node.js", "Express.js", "REST API Design", "JWT Auth", "Bcrypt", "Zod Validation"] },
+  { label: "Database", items: ["MongoDB", "Mongoose ODM", "MongoDB Atlas"] },
+  { label: "System Design", items: ["Monolithic & Microservices", "Load Balancing", "Caching", "Redis"] },
+  { label: "DevOps & Tools", items: ["Git", "GitHub", "Docker", "Postman", "Vercel", "Netlify", "VPS (Hostinger)", "PM2", "GitHub Actions (CI/CD)"] },
+  { label: "Integrations", items: ["Razorpay", "Stripe", "Nodemailer", "Brevo", "Google Gemini AI", "Multer", "pdf-parse", "Clerk", "Cloudinary"] },
 ];
 
 const STATS = [
-  { val: 5, suffix: "", label: "Live Projects" },
-  { val: 3, suffix: "", label: "Clients Served" },
-  { val: 100, suffix: "%", label: "On-Time Delivery" },
-  { val: 0, suffix: "", label: "Post-Delivery Revisions" },
+  { val: 2, suffix: "", label: "Live Production Apps" },
+  { val: 150, suffix: "+", label: "DSA Problems (LeetCode)" },
+  { val: 3, suffix: "", label: "Months MERN Internship" },
+  { val: 100, suffix: "%", label: "Responsive, Device-Tested" },
 ];
-
-const SKILLS = [
-  ["React.js", 85],
-  ["Node.js & Express.js", 80],
-  ["MongoDB", 75],
-  ["REST API Design", 85],
-  ["JWT Authentication", 80],
-  ["AI Integration", 70],
-  ["Next.js", 65],
-  ["Tailwind CSS", 90],
-] as const;
 
 function Counter({ to, suffix }: { to: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -90,9 +82,9 @@ export function About() {
               </div>
 
               <div className="absolute inset-x-6 bottom-6 font-mono text-[10px] uppercase leading-relaxed tracking-[0.18em] text-white/55">
-                Based in India / Open to Full-Time Roles
+                Based in India / Open to Full-Time SDE & Full-Stack Roles
                 <br />
-                Mahakaushal University · CS 2025
+                Sarvepalli Radhakrishnan University · CSE 2026
               </div>
             </div>
           </motion.div>
@@ -106,19 +98,24 @@ export function About() {
 
             <div className="mt-8 space-y-5 text-base leading-relaxed text-white/65">
               <p>
-                I'm a Computer Science graduate from Mahakaushal University, Jabalpur (Class of 2025). I build and
-                ship production-grade web applications — not side projects that sit in draft, but live products with
-                real users, real payment flows, and real AI pipelines.
+                I'm a Computer Science &amp; Engineering graduate (Class of 2026) from Sarvepalli Radhakrishnan University
+                (RKDF Institute of Science &amp; Technology), Bhopal. I'm a full-stack MERN developer who ships
+                production-grade web apps — not toy projects. I build with real users, real payment flows, and real
+                deployment pipelines. I care about reliability, security, clean REST API design, and the end user.
               </p>
-              <p>
-                My focus is the full stack: clean React frontends, robust Express and Node.js backends, MongoDB data
-                modelling, and AI integrations using Google Gemini. I don't just implement features — I think about
-                scalability, security, and the user on the other end.
-              </p>
-              <p>
-                I delivered my first freelance project — a healthcare clinic website — in 3 days with zero revisions.
-                That kind of reliability is what I bring to every build.
-              </p>
+            </div>
+
+            <div className="mt-10 border-y border-white/10 py-7">
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ember">Experience</div>
+              <h3 className="mt-3 font-display text-2xl text-bone">MERN Stack Developer Intern</h3>
+              <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-white/50">
+                3Skill Training · Aug 2026 – Oct 2026
+              </div>
+              <ul className="mt-5 space-y-3 text-sm leading-relaxed text-white/65">
+                <li>Built a full-stack real-estate admin dashboard with secure, role-based admin access for listings, enquiries, and user data.</li>
+                <li>Set up a dedicated MongoDB Atlas cluster (AWS, Mumbai) with a normalised schema for reliable multi-collection CRUD.</li>
+                <li>Developed Express.js + Mongoose REST APIs for the listing lifecycle, cutting manual admin effort by ~55%.</li>
+              </ul>
             </div>
 
             <div className="mt-10 space-y-4">
@@ -149,25 +146,6 @@ export function About() {
           ))}
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-x-12 gap-y-5 md:grid-cols-2">
-          {SKILLS.map(([name, pct]) => (
-            <div key={name}>
-              <div className="mb-2 flex items-baseline justify-between">
-                <span className="font-display text-base text-bone">{name}</span>
-                <span className="font-mono text-[11px] text-ember">{pct}%</span>
-              </div>
-              <div className="h-[3px] w-full overflow-hidden bg-white/10">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${pct}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="ember-sweep h-full bg-ember"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

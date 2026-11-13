@@ -1,0 +1,4 @@
+- [ ] Update the hero, about, education, experience, and grouped technology content.
+- [ ] Reorder and refresh all five project cards with live links and screenshots.
+- [ ] Update contact details and status text; verify the portfolio preview.
+- [ ] Apply the required package security update and commit the completed changes.
